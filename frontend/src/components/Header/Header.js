@@ -7,7 +7,10 @@ const Header = () => {
   return (<Layout>
     <Navbar isCompactisBordered variant="floating">
       <Navbar.Brand>
-        <Text b color="inherit" hideIn="xs" as={Link} href="/">
+        <Text b h1  hideIn="xs" as={Link} href="/" size={30}
+        css={{
+          textGradient: "45deg, $purple600 -20%, $pink600 100%",
+        }}>
           Echo
         </Text>
       </Navbar.Brand>

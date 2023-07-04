@@ -1,35 +1,59 @@
-import { Card,Text, Button,  Link,Row ,Textarea} from "@nextui-org/react";
+// import { Card,Text, Button,  Link,Row ,Textarea} from "@nextui-org/react";
+import React from "react";
+import { Modal, Input, Row, Checkbox, Button, Text, Link } from "@nextui-org/react";
+import { Mail } from "./Mail";
+import { Password } from "./Password";
 
 export default function Login() {
   return (
-    <Card css={{ mw: "400px",height:"22rem",margin: "$18 auto"}}>
-    <Card.Header css={{alignContent:"center"}}>
-      <Text b>Login</Text>
-    </Card.Header>
-    <Card.Divider />
-    <Card.Body >
-    <Textarea css={{margin:"1rem 2rem"}}
-          label="Email"
-          placeholder="Enter your Email"
-          color="primary"
-          minRows={1}
-        />
-         <Textarea css={{margin:"0.2rem 2rem"}}
-          label="Password"
-          color="primary"
-          placeholder="Enter your Password"
-          minRows={1}
-        />
-    </Card.Body>
-    <Card.Divider />
-    <Card.Footer>
-      <Row justify="flex-end">
-        <Button size="sm" auto as={Link} light href="/signup">
-          Create New Account
-        </Button>
-        <Button size="sm" auto >Login</Button>
-      </Row>
-    </Card.Footer>
-  </Card>
+    <Modal
+        closeButton
+        blur
+        aria-labelledby="modal-title"
+        open={true}
+      >
+        <Modal.Header>
+          <Text id="modal-title" size={18}>
+            Welcome to
+            <Text b size={18}>
+              NextUI
+            </Text>
+          </Text>
+        </Modal.Header>
+        <Modal.Body>
+          <Input
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="Email"
+            contentLeft={<Mail fill="currentColor" />}
+          />
+          <Input
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="Password"
+            contentLeft={<Password fill="currentColor" />}
+          />
+          <Row justify="space-between">
+            <Checkbox>
+              <Text size={14}>Remember me</Text>
+            </Checkbox>
+            <Text size={14}>Forgot password?</Text>
+          </Row>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button auto flat color="error" as={Link} href="/signup">
+            Create new Account
+          </Button>
+          <Button auto >
+            Sign in
+          </Button>
+        </Modal.Footer>
+      </Modal>
   );
 }

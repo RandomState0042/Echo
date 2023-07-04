@@ -1,5 +1,5 @@
 import { Card, Grid, Row, Text } from "@nextui-org/react";
-
+import "./home.css"
 export default function Home() {
   const list = [
     {
@@ -85,7 +85,20 @@ export default function Home() {
   ];
 
   return (
-    <Grid.Container gap={4} justify="flex-start">
+    <div>
+      <div className="heading">
+      <Text
+        h1
+        size={60}
+        css={{
+          textGradient: "45deg, $yellow600 -20%, $red600 100%",
+        }}
+        weight="bold"
+      >
+        Galgotias Club 
+      </Text>
+      </div>
+      <Grid.Container gap={4} justify="flex-start">
       {list.map((item, index) => (
         <Grid xs={6} sm={4} key={index}>
           <Card isPressable css={{ margin:"1rem 1.1rem"}}>
@@ -107,5 +120,6 @@ export default function Home() {
         </Grid>
       ))}
     </Grid.Container>
+    </div>
   );
 }

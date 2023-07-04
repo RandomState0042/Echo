@@ -3,8 +3,6 @@ require('dotenv').config();
 const connectDatabase = () => {
   mongoose
     .connect(process.env.DB_URI, {
-    // useUnifiedTopology: true,
-    // useNewUrlParser: true
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true

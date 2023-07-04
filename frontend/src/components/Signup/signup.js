@@ -1,7 +1,41 @@
-import { Card,Text, Button, Link, Row ,Textarea} from "@nextui-org/react";
+import { Card,Text, Button, Grid , Link, Row ,Textarea} from "@nextui-org/react";
+import { Mail } from "../Login/Mail";
 
 export default function Signup() {
-  return (
+  return (<Grid.Container >
+    <Grid css={{margin: "$20 auto"}}>
+    <Text
+      h1
+      size={60}
+      css={{
+        textGradient: "45deg, $blue600 -20%, $pink600 50%",
+      }}
+      weight="bold"
+    >
+      Let's
+    </Text>
+    <Text
+      h1
+      size={60}
+      css={{
+        textGradient: "45deg, $purple600 -20%, $pink600 100%",
+      }}
+      weight="bold"
+    >
+      Connect 
+    </Text>
+    <Text
+      h1
+      size={60}
+      css={{
+        textGradient: "45deg, $yellow600 -20%, $red600 100%",
+      }}
+      weight="bold"
+    >
+      Galgotian's
+    </Text>
+    </Grid>
+   
     <Card css={{ mw: "400px",height:"24rem",margin: "$18 auto"}}>
     <Card.Header css={{alignContent:"center"}}>
       <Text b>Login</Text>
@@ -14,6 +48,7 @@ export default function Signup() {
           color="primary"
           minRows={1}
           itemType="email"
+          contentLeft={<Mail fill="currentColor" />}
         />
          <Textarea css={{margin:"0.2rem 2rem"}}
           label="Password"
@@ -40,5 +75,6 @@ export default function Signup() {
       </Row>
     </Card.Footer>
   </Card>
+  </Grid.Container>
   );
 }
